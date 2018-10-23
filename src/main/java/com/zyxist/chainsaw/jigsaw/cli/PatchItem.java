@@ -17,6 +17,7 @@ package com.zyxist.chainsaw.jigsaw.cli;
 
 import com.zyxist.chainsaw.jigsaw.JigsawFlags;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -38,7 +39,7 @@ public class PatchItem implements ArgProducer {
 	public void toArgs(List<String> args) {
 		if (!patchingJars.isEmpty()) {
 			args.add(JigsawFlags.PATCH_MODULE);
-			args.add(patchedModule+"="+patchingJars.stream().collect(Collectors.joining(":")));
+			args.add(patchedModule+"="+patchingJars.stream().collect(Collectors.joining(File.pathSeparator)));
 		}
 	}
 }

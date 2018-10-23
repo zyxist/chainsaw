@@ -23,6 +23,7 @@ import org.gradle.api.logging.LogLevel;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
 
+import java.io.File;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -74,7 +75,7 @@ public class ModulePatcher {
 	}
 
 	private String toGenericName(ResolvedArtifact artifact) {
-		return artifact.getModuleVersion().getId().getGroup()+":"+artifact.getModuleVersion().getId().getName();
+		return artifact.getModuleVersion().getId().getGroup() + File.pathSeparator + artifact.getModuleVersion().getId().getName();
 	}
 
 

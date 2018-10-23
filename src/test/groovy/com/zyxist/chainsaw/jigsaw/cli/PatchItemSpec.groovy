@@ -43,7 +43,7 @@ class PatchItemSpec extends Specification {
 		then:
 		args.size() == 2
 		args.get(0) == '--patch-module'
-		args.get(1) == 'com.example.foo=/path/to/some.jar:/path/to/another.jar'
+		args.get(1) == "com.example.foo=/path/to/some.jar${File.pathSeparator}/path/to/another.jar"
 	}
 
 }
